@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roop Furniture Catalog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f7f5;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #3b2322, #4a2c2a);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo i {
+            color: #d9a171;
+        }
+        
+        .search-bar {
+            display: flex;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 2rem;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+        
+        .search-bar button {
+            background: #d9a171;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 90;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item {
+            position: relative;
+            padding: 0.8rem 1.2rem;
+        }
+        
+        .nav-item a {
+            color: #4a2c2a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-item a:hover {
+            color: #d9a171;
+        }
+        
+        .nav-item:hover .subcategories {
+            display: block;
+        }
+        
+        .subcategories {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 0 0 8px 8px;
+            z-index: 10;
+        }
+        
+        .subcategory-link {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            color: #4a2c2a;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .subcategory-link:hover {
+            background: #f8f1e9;
+            padding-left: 1.5rem;
+        }
+        
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero-tag {
+            background: #d9a171;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-cta {
+            background: #4a2c2a;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .hero-cta:hover {
+            background: #5c4033;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Catalog Structure */
+        .catalog {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        
+        .main-category {
+            margin-bottom: 4rem;
+            scroll-margin-top: 90px;
+        }
+        
+        .main-category-title {
+            font-size: 2.2rem;
+            color: #4a2c2a;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .main-category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: #d9a171;
+            border-radius: 2px;
+        }
+        
+        .category-section {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            color: #5c4033;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid #d9a171;
+        }
+        
+        .subcategory-section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .subcategory-title {
+            font-size: 1.5rem;
+            color: #7a5b4d;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .subcategory-title::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #d9a171;
+            border-radius: 50%;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-card {
+            background: #f9f7f5;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img-container {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .view-photos-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .view-photos-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-name {
+            font-size: 1.2rem;
+            color: #4a2c2a;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .product-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Modal Gallery */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 95%;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 15;
+            font-size: 1.4rem;
+            transition: all 0.3s;
+        }
+        
+        .close-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: rotate(90deg);
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.6s ease;
+            height: 500px;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .carousel-img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+            padding: 0 15px;
+        }
+        
+        .carousel-btn {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        .modal-info {
+            padding: 1.8rem;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        
+        .modal-title {
+            font-size: 1.6rem;
+            color: #4a2c2a;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .modal-desc {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #3b2322, #4a2c2a);
+            color: white;
+            padding: 3rem 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #d9a171;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #d3d3d3;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: #d9a171;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #d9a171;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #d3d3d3;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .search-bar {
+                order: 3;
+                margin: 1rem 0 0;
+                max-width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .nav-container {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-item {
+                padding: 0.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .main-category-title {
+                font-size: 1.8rem;
+            }
+            
+            .carousel, .carousel-img {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-banner {
+                height: 400px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-couch"></i>
+                Roop Furniture
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search Products, Colors & More...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-item">
+                <a href="#bedroom">Bedroom</a>
+                <div class="subcategories">
+                    <a href="#beds" class="subcategory-link">Beds</a>
+                    <a href="#wardrobes" class="subcategory-link">Wardrobes</a>
+                    <a href="#dressers" class="subcategory-link">Dressers</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#living">Living Room</a>
+                <div class="subcategories">
+                    <a href="#sofas" class="subcategory-link">Sofas</a>
+                    <a href="#tv-units" class="subcategory-link">TV Units</a>
+                    <a href="#coffee-tables" class="subcategory-link">Coffee Tables</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#dining">Dining</a>
+                <div class="subcategories">
+                    <a href="#dining-tables" class="subcategory-link">Dining Tables</a>
+                    <a href="#dining-chairs" class="subcategory-link">Dining Chairs</a>
+                    <a href="#dining-sets" class="subcategory-link">Dining Sets</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#office">Office</a>
+            </div>
+              <div class="nav-item">
+                <a href="#mandir">Mandir</a>
+                <div class="subcategories">
+                    <a href="#bada-mandir" class="subcategory-link">bada Mandir</a>
+                  </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <div class="hero-tag">THE BIG FREEDOM SALE</div>
+            <h1 class="hero-title">UP TO 50% OFF</h1>
+            <p class="hero-subtitle">Premium Furniture Collection</p>
+            <a href="#bedroom" class="hero-cta">BROWSE COLLECTION</a>
+        </div>
+    </section>
+    
+    <!-- Catalog Structure -->
+    <main class="catalog">
+        <!-- Bedroom Main Category -->
+        <section id="bedroom" class="main-category">
+            <h2 class="main-category-title">Bedroom</h2>
+            
+            <!-- Beds Category -->
+            <div class="category-section" id="beds">
+                <h3 class="category-title">Beds</h3>
+                
+                <!-- King Size Beds Subcategory -->
+                <div class="subcategory-section">
+                    <h4 class="subcategory-title">King Size Beds</h4>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-1')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Royal King Bed</h3>
+                                <p class="product-desc">Solid wood construction with elegant design. Perfect for master bedrooms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern King Bed" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-2')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Modern King Bed</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Storage King Bed" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-3')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Storage King Bed</h3>
+                                <p class="product-desc">Hydraulic lift mechanism with spacious storage underneath. Great for small spaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Queen Size Beds Subcategory -->
+                <div class="subcategory-section">
+                    <h4 class="subcategory-title">Queen Size Beds</h4>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Classic Queen Bed" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-4')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Classic Queen Bed</h3>
+                                <p class="product-desc">Timeless design with elegant curves. Perfect for traditional bedrooms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Upholstered Queen Bed" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-5')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Upholstered Queen Bed</h3>
+                                <p class="product-desc">Luxurious fabric upholstery with plush padding. Ultimate comfort and style.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wardrobes Category -->
+            <div class="category-section" id="wardrobes">
+                <h3 class="category-title">Wardrobes</h3>
+                
+                <!-- Walk-in Wardrobes Subcategory -->
+                <div class="subcategory-section">
+                    <h4 class="subcategory-title">Walk-in Wardrobes</h4>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1631889992040-4d7a0d1e7b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Walk-in Wardrobe" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-6')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Luxury Walk-in Wardrobe</h3>
+                                <p class="product-desc">Customizable storage solutions with premium finishes. Spacious and elegant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Living Room Main Category -->
+        <section id="living" class="main-category">
+            <h2 class="main-category-title">Living Room</h2>
+            
+            <!-- Sofas Category -->
+            <div class="category-section" id="sofas">
+                <h3 class="category-title">Sofas</h3>
+                
+                <!-- Fabric Sofas Subcategory -->
+                <div class="subcategory-section">
+                    <h4 class="subcategory-title">Fabric Sofas</h4>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Fabric Sofa" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-7')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Luxury Fabric Sofa</h3>
+                                <p class="product-desc">Premium fabric with deep seating comfort. Perfect for family living rooms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1992&q=80" alt="Sectional Sofa" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-8')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Sectional Sofa</h3>
+                                <p class="product-desc">Modular design with plush cushions. Perfect for large living spaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <!-- TV units Category -->
+            <div class="category-section" id="tv-units">
+                <h3 class="category-title">TV units</h3>
+                
+                <!-- TV Units Subcategory -->
+                <div class="subcategory-section">
+                    <h4 class="subcategory-title">Luxury TV Units</h4>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1631889992040-4d7a0d1e7b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury TV Units Wardrobe" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-9')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Luxury TV Units</h3>
+                                <p class="product-desc">Customizable storage solutions with premium finishes. Spacious and elegant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Mandir Main Category -->
+        <section id="mandir" class="main-category">
+            <h2 class="main-category-title">Mandir</h2>
+            
+            <!-- bada_mandir Category -->
+            <div class="category-section" id="bada-mandir">
+                <h3 class="category-title">Bada-Mandir</h3>
+                
+                <!-- bada-mandir Subcategory -->
+                <div class="subcategory-section">
+                    <h4 class="subcategory-title">bada mandir</h4>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="wooden bada mandir" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-10')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">wooden bada mandir</h3>
+                                <p class="product-desc">Solid wood construction with elegant design. Perfect for master bedrooms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="mandir with lights" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-11')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">mandir with lights</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="silver mandir" class="product-img">
+                                <button class="view-photos-btn" onclick="openModal('modal-12')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">silver mandir</h3>
+                                <p class="product-desc">Hydraulic lift mechanism with spacious storage underneath. Great for small spaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              
+        </section>
+
+    </main>
+    
+    <!-- Modals -->
+    <!-- Modal 1 (Royal King Bed) -->
+    <div id="modal-1" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-1')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed Front View" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed Detail" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed Side View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-1')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-1')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-1-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">Royal King Bed</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master bedrooms. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+      <!-- Modal 9 (TV units) -->
+    <div id="modal-9" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-9')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury TV Units Front View" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury TV Units Detail" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury TV Units Side View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-9')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-9')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-9-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">Luxury TV Units </h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master bedrooms. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal 10 wooden bada mandir  -->
+    <div id="modal-10" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-10')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="wooden bada mandir Front View" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="wooden bada mandir Detail" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="wooden bada mandir Side View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-10')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-10')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-10-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">wooden bada mandir </h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master bedrooms. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Additional modals would go here -->
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Ruup Furniture</h3>
+                <p>Premium furniture for modern homes. Crafted with quality materials and attention to detail.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="#bedroom"><i class="fas fa-chevron-right"></i> Bedroom</a></li>
+                    <li><a href="#living"><i class="fas fa-chevron-right"></i> Living Room</a></li>
+                    <li><a href="#dining"><i class="fas fa-chevron-right"></i> Dining</a></li>
+                    <li><a href="#home-office"><i class="fas fa-chevron-right"></i> Home Office</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Information</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Showrooms</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Catalog</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Design Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Mahavir chook, Muzaffarnagar </p>
+                    <p><i class="fas fa-phone"></i> +91 8445415134</p>
+                    <p><i class="fas fa-envelope"></i> roopfurnituremall@yahoo.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 Ruup Furniture. 
+        </div>
+    </footer>
+    
+    <script>
+        // Carousel functionality
+        function initCarousel(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            
+            const carousel = modal.querySelector('.carousel');
+            const indicators = modal.querySelector('.carousel-indicators');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            
+            // Clear existing indicators
+            indicators.innerHTML = '';
+            
+            // Create indicators
+            slides.forEach((_, index) => {
+                const indicator = document.createElement('div');
+                indicator.className = 'indicator';
+                indicator.onclick = () => goToSlide(modalId, index);
+                indicators.appendChild(indicator);
+            });
+            
+            // Initialize first slide
+            goToSlide(modalId, 0);
+        }
+        
+        function goToSlide(modalId, index) {
+            const modal = document.getElementById(modalId);
+            const carousel = modal.querySelector('.carousel');
+            const indicators = modal.querySelectorAll('.indicator');
+            
+            // Update carousel position
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update active indicator
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+            });
+        }
+        
+        function prevSlide(modalId) {
+            const modal = document.getElementById(modalId);
+            const indicators = modal.querySelectorAll('.indicator');
+            const currentIndex = Array.from(indicators).findIndex(ind => ind.classList.contains('active'));
+            const newIndex = (currentIndex - 1 + indicators.length) % indicators.length;
+            goToSlide(modalId, newIndex);
+        }
+        
+        function nextSlide(modalId) {
+            const modal = document.getElementById(modalId);
+            const indicators = modal.querySelectorAll('.indicator');
+            const currentIndex = Array.from(indicators).findIndex(ind => ind.classList.contains('active'));
+            const newIndex = (currentIndex + 1) % indicators.length;
+            goToSlide(modalId, newIndex);
+        }
+        
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            initCarousel(modalId);
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside content
+        window.addEventListener('click', function(e) {
+            document.querySelectorAll('.modal').forEach(modal => {
+                if (e.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
