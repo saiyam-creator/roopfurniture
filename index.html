@@ -466,6 +466,28 @@
             background: white;
             transform: scale(1.2);
         }
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 20px;
+}
+
         
         .modal-info {
             padding: 1.8rem;
@@ -733,13 +755,13 @@
                     <div class="products-grid">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed" class="product-img">
+                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="solid wooden bed" class="product-img">
                                 <button class="view-photos-btn" onclick="openModal('modal-1')">
                                     <i class="fas fa-images"></i> View Photos
                                 </button>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-name">Royal King Bed</h3>
+                                <h3 class="product-name">solid wooden bed</h3>
                                 <p class="product-desc">Solid wood construction with elegant design. Perfect for master Beds.</p>
                             </div>
                         </div>
@@ -777,34 +799,144 @@
             <div class="category-section" id="Uploster Beds">
                 <h3 class="category-title">Uploster Beds</h3>
                 
-                <!-- Walk-in Uploster Beds Subcategory -->
+                <!--  Uploster Beds Subcategory -->
                 <div class="subcategory-section">
-                    <h4 class="subcategory-title">Walk-in Uploster Beds</h4>
+                    <h4 class="subcategory-title">Uploster Beds</h4>
                     <div class="products-grid">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="https://images.unsplash.com/photo-1631889992040-4d7a0d1e7b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Walk-in Wardrobe" class="product-img">
-                                <button class="view-photos-btn" onclick="openModal('modal-6')">
+                                <img src="WhatsApp Image 2025-08-16 at 5.36.21 PM.jpeg" alt="uploster bed 1" class="product-img" onclick="openModal('modal-111')">
+                                <button class="view-photos-btn" onclick="openModal('modal-111')">
                                     <i class="fas fa-images"></i> View Photos
                                 </button>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-name">Luxury Walk-in Wardrobe</h3>
+                                <h3 class="product-name">Uploster bed 1</h3>
                                 <p class="product-desc">Customizable storage solutions with premium finishes. Spacious and elegant.</p>
                             </div>
                         </div>
+
                           <div class="product-card">
                             <div class="product-img-container">
-                                <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern King Bed" class="product-img">
-                                <button class="view-photos-btn" onclick="openModal('modal-2')">
+                                <img src="uploster 2.jpeg" alt="Uploster bed 2" class="product-img" onclick="openModal('modal-112')">
+                                <button class="view-photos-btn" onclick="openModal('modal-112')">
                                     <i class="fas fa-images"></i> View Photos
                                 </button>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-name">Modern King Bed</h3>
+                                <h3 class="product-name">Uploster bed 2</h3>
                                 <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
                             </div>
                         </div>
+
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="uploster 3.jpeg" alt="Uploster bed 3" class="product-img" onclick="openModal('modal-113')">
+                                <button class="view-photos-btn" onclick="openModal('modal-113')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Uploster bed 3</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="uploster 4.jpeg" alt="Uploster bed 4" class="product-img" onclick="openModal('modal-114')">
+                                <button class="view-photos-btn" onclick="openModal('modal-114')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Uploster bed 4</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+
+                        
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="uploster 5.jpeg" alt="Uploster bed 5" class="product-img" onclick="openModal('modal-115')">
+                                <button class="view-photos-btn" onclick="openModal('modal-115')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">uploster bed 5</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+
+                           <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="uploster 6.jpeg" alt="Uploster bed 6" class="product-img" onclick="openModal('modal-116')">
+                                <button class="view-photos-btn" onclick="openModal('modal-116')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">uploster bed 6</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+
+                           <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="uploster 7.jpeg" alt="Uploster bed 7" class="product-img" onclick="openModal('modal-117')">
+                                <button class="view-photos-btn" onclick="openModal('modal-117')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">uploster bed 7</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+
+                           <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="uploster 8.jpeg" alt="Uploster bed 8" class="product-img" onclick="openModal('modal-118')">
+                                <button class="view-photos-btn" onclick="openModal('modal-118')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">uploster bed 8</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+
+                           <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="uploster 9.jpeg" alt="Uploster bed 9" class="product-img"  onclick="openModal('modal-119')">
+
+                                <button class="view-photos-btn" onclick="openModal('modal-119')">
+                                    <i class="fas fa-images"></i> View Photos
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">uploster bed 9</h3>
+                                <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                       <div class="product-img-container">
+                            <img src="uploster 10.jpeg" alt="Uploster bed 10"class="product-img"  onclick="openModal('modal-1110')">
+        
+                         <button class="view-photos-btn" onclick="openModal('modal-1110')">
+                      <i class="fas fa-images"></i> View Photos
+                        </button>
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">uploster bed 10</h3>
+        <p class="product-desc">Sleek design with clean lines. Minimalist aesthetic for contemporary spaces.</p>
+    </div>
+</div>
+
                     </div>
                 </div>
             </div>
@@ -820,7 +952,7 @@
                     <div class="products-grid">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed" class="product-img">
+                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="uploster Bed" class="product-img">
                                 <button class="view-photos-btn" onclick="openModal('modal-1')">
                                     <i class="fas fa-images"></i> View Photos
                                 </button>
@@ -873,13 +1005,13 @@
                     <div class="products-grid">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed" class="product-img">
+                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="uploster Bed" class="product-img">
                                 <button class="view-photos-btn" onclick="openModal('modal-1')">
                                     <i class="fas fa-images"></i> View Photos
                                 </button>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-name">Royal King Bed</h3>
+                                <h3 class="product-name">uploster Bed</h3>
                                 <p class="product-desc">Solid wood construction with elegant design. Perfect for master Beds.</p>
                             </div>
                         </div>
@@ -1047,7 +1179,7 @@
                     <div class="products-grid">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Dinning" class="product-img">
+                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="uploster Dinning" class="product-img">
                                 <button class="view-photos-btn" onclick="openModal('modal-001')">
                                     <i class="fas fa-images"></i> View Photos
                                 </button>
@@ -1138,7 +1270,7 @@
                     <div class="products-grid">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Dinning" class="product-img">
+                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="uploster Dinning" class="product-img">
                                 <button class="view-photos-btn" onclick="openModal('modal-001')">
                                     <i class="fas fa-images"></i> View Photos
                                 </button>
@@ -1229,7 +1361,7 @@
                     <div class="products-grid">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Dinning" class="product-img">
+                                <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="uploster Dinning" class="product-img">
                                 <button class="view-photos-btn" onclick="openModal('modal-001')">
                                     <i class="fas fa-images"></i> View Photos
                                 </button>
@@ -1309,28 +1441,211 @@
     </main>
     
     <!-- Modals -->
-    <!-- Modal 1 (Royal King Bed) -->
-    <div id="modal-1" class="modal">
+    <!-- Modal 111 (uploster Bed 1) -->
+    <div id="modal-111" class="modal">
         <div class="modal-content">
-            <div class="close-btn" onclick="closeModal('modal-1')">✕</div>
+            <div class="close-btn" onclick="closeModal('modal-111')">✕</div>
             <div class="carousel">
                 <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1583845112203-454c8086e1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed Front View" class="carousel-img">
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed Detail" class="carousel-img">
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Royal King Bed Side View" class="carousel-img">
+                    <img src="WhatsApp Image 2025-08-16 at 5.36.21 PM.jpeg" alt="uploster Bed Front View" class="carousel-img">
                 </div>
             </div>
             <div class="carousel-controls">
-                <button class="carousel-btn prev" onclick="prevSlide('modal-1')">❮</button>
-                <button class="carousel-btn next" onclick="nextSlide('modal-1')">❯</button>
+                <button class="carousel-btn prev" onclick="prevSlide('modal-111')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-111')">❯</button>
             </div>
-            <div class="carousel-indicators" id="modal-1-indicators"></div>
+            <div class="carousel-indicators" id="modal-111-indicators"></div>
             <div class="modal-info">
-                <h3 class="modal-title">Royal King Bed</h3>
+                <h3 class="modal-title">uploster Bed 1</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 112 (uploster Bed 2) -->
+    <div id="modal-112" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-112')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 2.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-112')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-112')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-112-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 2</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 113 (uploster Bed 2) -->
+    <div id="modal-113" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-113')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 3.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-113')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-113')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-113-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 3</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 114 (uploster Bed 2) -->
+    <div id="modal-114" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-114')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 4.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-114')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-114')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-114-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 4</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 115 (uploster Bed 2) -->
+    <div id="modal-115" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-115')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 5.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-115')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-115')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-115-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 5</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 116 (uploster Bed 6) -->
+    <div id="modal-116" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-116')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 6.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-116')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-116')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-116-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 6</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 117 (uploster Bed 7) -->
+    <div id="modal-117" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-117')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 7.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-117')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-117')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-117-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 7</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 118 (uploster Bed 8) -->
+    <div id="modal-118" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-118')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 8.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-118')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-118')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-118-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 8</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 119 (uploster Bed 9) -->
+    <div id="modal-119" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-119')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 9.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-119')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-119')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-119-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 9</h3>
+                <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
+            </div>
+        </div>
+    </div>
+
+       <!-- Modal 1110 (uploster Bed 10) -->
+    <div id="modal-1110" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal('modal-1110')">✕</div>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="uploster 10.jpeg" alt="uploster Bed Front View" class="carousel-img">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="prevSlide('modal-1110')">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide('modal-1110')">❯</button>
+            </div>
+            <div class="carousel-indicators" id="modal-1110-indicators"></div>
+            <div class="modal-info">
+                <h3 class="modal-title">uploster Bed 10</h3>
                 <p class="modal-desc">Solid wood construction with elegant design. Perfect for master Beds. Dimensions: 220cm width × 200cm length × 100cm height. Features high-density foam mattress support and solid wood frame construction.</p>
             </div>
         </div>
